@@ -1,0 +1,32 @@
+/* Open Sans Font is Added from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=latin-ext');
+
+
+@import "colors.scss";
+
+// Components
+@import "Header.scss";
+
+
+
+/* To cover the whole page */
+html{
+  background-color: $white;
+}
+body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+.icon{
+  margin-right: 6px;
+  color: $white;
+}
+
+.appContainer {
+
+}
+
+
