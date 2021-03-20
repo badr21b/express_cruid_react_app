@@ -4,8 +4,7 @@ import Axios from 'axios';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 import Home from "./component/Home";
 import Contact from "./component/Contact";
@@ -17,20 +16,39 @@ function App() {
   const [movieName, setMovieName] = useState('');
   const [review, setReview] = useState('');
 
+  // get
   const [reviewList, setReviewList] = useState([]);
+
+  // Update
+  const [newReview, setNewReview] = useState('');
 
   const submitReview = () => {
       Axios.post('http://localhost:3001/api/insert', {
         movieName: movieName, movieReview: review
-      }).then(() => {
-        alert("successful insert");
       })
+      setReviewList([...reviewList,
+          {movieName: movieName, review: review}
+      ])
   }
+
+  const deleteReview = (movie) => {
+      Axios.delete(`http://localhost:3001/api/delete/${movie}`)
+  }
+
+  const updateReview = (movie) => {
+      Axios.put("http://localhost:3001/api/update", {
+          movieName: movie,
+          movieReview: newReview
+      });
+      setNewReview('');
+  }
+
   const getMovies = () => {
       Axios.get('http://localhost:3001/movies').then((response) => {
           setReviewList(response.data);
-      })
+      });
   }
+
 
   return (
       <Router>
@@ -72,12 +90,18 @@ function App() {
                 <div>========================</div>
                 <div>
                     <button onClick={getMovies} >Get Movies</button>
-                    <ul>
+                    <ul className={'cardsList'}>
                         {reviewList.map((val, key) => {
                             return (
-                                <li key={key}>
+                                <li key={key} className={'movieCardContainer'}>
                                     <div>Movie Name: {val.movieName}</div>
                                     <div>Review: {val.movieReview}</div>
+
+                                    <button onClick={() => {deleteReview(val.movieName)}}>Delete</button>
+                                    <input type={'text'} onChange={(e) => {
+                                        setNewReview(e.target.value);
+                                    }} />
+                                    <button onClick={() => {updateReview(val.movieName)}}>Update</button>
                                 </li>
                             )
                         })}

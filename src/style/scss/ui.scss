@@ -30,3 +30,29 @@ body {
 }
 
 
+.movieCardContainer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
+  border: 1px solid;
+  background-color: red;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 12px;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: self-start;
+}
+
+.cardsList{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  max-width: 90%;
+  justify-items: center;
+}
