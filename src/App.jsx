@@ -33,7 +33,8 @@ class App extends React.Component {
             movieName: this.state.movieName, movieReview: this.state.review
         }).then()
         this.setState({
-            reviewList: [...this.state.reviewList, {movieName: this.state.movieName, review: this.state.review}]
+            reviewList: [...this.state.reviewList, {movieName: this.state.movieName, movieReview: this.state.review}],
+            movieName: ''
         });
     };
 
