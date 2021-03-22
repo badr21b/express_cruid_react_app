@@ -78,14 +78,7 @@ class App extends React.Component {
 
     render() {
         //const [reviewList] = this.state;
-        const opts = {
-            height: '390',
-            width: '640',
-            playerVars: {
-                // https://developers.google.com/youtube/player_parameters
-                autoplay: 1,
-            },
-        };
+
         return(
             <Router>
 
@@ -108,61 +101,47 @@ class App extends React.Component {
 
 
                 <div className="App">
-                    <h1>CRUD APPLICATION</h1>
-                    <div className={'homeVideoContainer'}>
-                        <div className={'videoTextContainer'}>
-                            <div className={'imageContainer'}>
-                                <div className={'textWhite'}>Every small step is important</div>
-                                <div className={'textRed'}>معركة تحرير الوعي</div>
-                                <img
-                                    src="/paint_brush_green.png"
-                                    alt={''}
-                                />
-                            </div>
-                        </div>
-                        <YoutubeBackground className={'backgroundVideo'} videoId={'yC7wYVSogcU'}   opts={opts} /* default -> null */ />
-                    </div>
-                    <div className={"form"}>
-                        <label>Movie Name</label>
-                        <input type={"text"} name={"movieName"} onChange={(e) => {
-                            this.setState({
-                                movieName: e.target.value
-                            })
-                        }} />
+                    {/*<div className={"form"}>*/}
+                    {/*    <label>Movie Name</label>*/}
+                    {/*    <input type={"text"} name={"movieName"} onChange={(e) => {*/}
+                    {/*        this.setState({*/}
+                    {/*            movieName: e.target.value*/}
+                    {/*        })*/}
+                    {/*    }} />*/}
 
-                        <label>Review</label>
-                        <input type={"text"} name={"review"}  onChange={(e) => {
-                            this.setState({
-                                review: e.target.value
-                            })
-                        }} />
+                    {/*    <label>Review</label>*/}
+                    {/*    <input type={"text"} name={"review"}  onChange={(e) => {*/}
+                    {/*        this.setState({*/}
+                    {/*            review: e.target.value*/}
+                    {/*        })*/}
+                    {/*    }} />*/}
 
-                        <button onClick={this.submitReview.bind(this)} >Submit</button>
-                    </div>
+                    {/*    <button onClick={this.submitReview.bind(this)} >Submit</button>*/}
+                    {/*</div>*/}
 
-                    <div>========================</div>
-                    <div>
-                        <button onClick={this.getMovies.bind(this)} >Get Movies</button>
-                        <ul className={'cardsList'}>
-                            {this.state.reviewList.map((val, key) => {
-                                return (
-                                    <li key={key} className={'movieCardContainer'}>
-                                        <div>Movie Name: {val.movieName}</div>
-                                        <div>Review: {val.movieReview}</div>
+                    {/*<div>========================</div>*/}
+                    {/*<div>*/}
+                    {/*    <button onClick={this.getMovies.bind(this)} >Get Movies</button>*/}
+                    {/*    <ul className={'cardsList'}>*/}
+                    {/*        {this.state.reviewList.map((val, key) => {*/}
+                    {/*            return (*/}
+                    {/*                <li key={key} className={'movieCardContainer'}>*/}
+                    {/*                    <div>Movie Name: {val.movieName}</div>*/}
+                    {/*                    <div>Review: {val.movieReview}</div>*/}
 
-                                        <button onClick={this.deleteReview.bind(this, val.movieName)}>Delete</button>
-                                        <input type={'text'} onChange={(e) => {
-                                                this.setState({
-                                                    newReview: e.target.value
-                                                })
-                                            }}
-                                        />
-                                        <button onClick={this.updateReview.bind(this, val.movieName)}>Update</button>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
+                    {/*                    <button onClick={this.deleteReview.bind(this, val.movieName)}>Delete</button>*/}
+                    {/*                    <input type={'text'} onChange={(e) => {*/}
+                    {/*                            this.setState({*/}
+                    {/*                                newReview: e.target.value*/}
+                    {/*                            })*/}
+                    {/*                        }}*/}
+                    {/*                    />*/}
+                    {/*                    <button onClick={this.updateReview.bind(this, val.movieName)}>Update</button>*/}
+                    {/*                </li>*/}
+                    {/*            )*/}
+                    {/*        })}*/}
+                    {/*    </ul>*/}
+                    {/*</div>*/}
                 </div>
             </Router>
         );
