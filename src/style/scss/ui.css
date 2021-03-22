@@ -51,12 +51,22 @@
   text-decoration: none;
   color: #ffffff;
 }
+.headerContainer .navBarContainer .navBarItem .navBarItemText {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 6px 12px;
+  margin: 3px;
+  border-radius: 6px;
+}
 .headerContainer .navBarContainer .navBarItem:hover {
   cursor: pointer;
   background-color: #ffffff;
-  color: #1abc9c;
+  color: #1abc9c !important;
 }
 .headerContainer .navBarContainer .navBarItem:hover > .icon {
+  color: #1abc9c;
+}
+.headerContainer .navBarContainer .navBarItem:hover > .navBarItemText {
   color: #1abc9c;
 }
 
@@ -103,4 +113,56 @@ body {
   overflow-y: scroll;
   max-width: 90%;
   justify-items: center;
+}
+
+.backgroundVideo {
+  overflow: scroll;
+  width: 100%;
+  margin: 0 auto;
+  height: 900px;
+  position: relative;
+  display: block;
+}
+
+.homeVideoContainer {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.homeVideoContainer .videoTextContainer {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 90%;
+  height: 100%;
+}
+.homeVideoContainer .videoTextContainer > .imageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+}
+.homeVideoContainer .videoTextContainer > .imageContainer > .textWhite {
+  position: relative;
+  font-size: 32px;
+  color: #ffffff;
+  z-index: 10;
+  margin: 12px;
+}
+.homeVideoContainer .videoTextContainer > .imageContainer > .textRed {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  color: #e74c3c;
+  z-index: 10;
+  margin: 12px;
+}
+.homeVideoContainer .videoTextContainer > .imageContainer > img {
+  position: absolute;
+  opacity: 0.4;
 }

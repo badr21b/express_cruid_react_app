@@ -8,8 +8,8 @@ class HeaderComp extends React.Component {
         super(props);
         this.state = {
             navBarItemList: [
-                {fieldName: "home", icon: <FaClinicMedical className={"icon"} />, text: <Link className={"navBarItem"} to="/home">Home</Link> },
-                {fieldName: "home", icon: <FaBriefcaseMedical className={"icon"} />, text: <Link className={"navBarItem"} to="/contact">Contact</Link> },
+                {fieldName: "home", icon: <FaClinicMedical className={"icon"} />, text: <Link className={"navBarItemText"} to="/home">Home</Link> },
+                {fieldName: "home", icon: <FaBriefcaseMedical className={"icon"} />, text: <Link className={"navBarItemText"} to="/contact">Contact</Link> },
             ]
         };
 
@@ -48,7 +48,10 @@ class HeaderComp extends React.Component {
                 <div className={"navBarContainer"}>
                     { navBarItemList.map((item, key) => {
                         return (
-                            <div key={item.fieldName + key} className={"navBarItem"}> {item.icon} {item.text} </div>
+                            <div key={item.fieldName + key} className={"navBarItem"}>
+                                {item.icon}
+                                {item.text}
+                            </div>
                         );
                     })}
 

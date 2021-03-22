@@ -10,6 +10,7 @@ import Home from "./component/Home";
 import Contact from "./component/Contact";
 import Header from "./component/Header";
 import getRequest, {deleteRequest} from "./API/controllers/genericRequests";
+import YoutubeBackground from 'react-youtube-background'
 
 
 class App extends React.Component {
@@ -40,7 +41,7 @@ class App extends React.Component {
 
 
     deleteReview(movie)  {
-        deleteRequest(movie).then((response) => {
+        deleteRequest(movie).then(() => {
             setTimeout(() => {
                 this.getMovies();
             }, 1000);
@@ -77,7 +78,14 @@ class App extends React.Component {
 
     render() {
         //const [reviewList] = this.state;
-
+        const opts = {
+            height: '390',
+            width: '640',
+            playerVars: {
+                // https://developers.google.com/youtube/player_parameters
+                autoplay: 1,
+            },
+        };
         return(
             <Router>
 
@@ -101,6 +109,19 @@ class App extends React.Component {
 
                 <div className="App">
                     <h1>CRUD APPLICATION</h1>
+                    <div className={'homeVideoContainer'}>
+                        <div className={'videoTextContainer'}>
+                            <div className={'imageContainer'}>
+                                <div className={'textWhite'}>Every small step is important</div>
+                                <div className={'textRed'}>معركة تحرير الوعي</div>
+                                <img
+                                    src="/paint_brush_green.png"
+                                    alt={''}
+                                />
+                            </div>
+                        </div>
+                        <YoutubeBackground className={'backgroundVideo'} videoId={'yC7wYVSogcU'}   opts={opts} /* default -> null */ />
+                    </div>
                     <div className={"form"}>
                         <label>Movie Name</label>
                         <input type={"text"} name={"movieName"} onChange={(e) => {

@@ -56,3 +56,56 @@ body {
   max-width: 90%;
   justify-items: center;
 }
+
+.backgroundVideo{
+  overflow: scroll;
+  width: 100%;
+  margin: 0 auto;
+  height: 900px;
+  position: relative;
+  display: block;
+}
+.homeVideoContainer{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  .videoTextContainer{
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 90%;
+    height: 100%;
+    &>.imageContainer{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+      height: 100%;
+      &>.textWhite{
+        position: relative;
+        font-size: 32px;
+        color: $white;
+        z-index: 10;
+        margin: 12px;
+      }
+      &>.textRed{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        font-size: 32px;
+        color: $red;
+        z-index: 10;
+        margin: 12px;
+      }
+      &>img{
+        //height: 500px;
+        //width: auto;
+        position: absolute;
+        opacity: 0.4;
+      }
+    }
+  }
+}
